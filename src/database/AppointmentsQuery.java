@@ -27,6 +27,8 @@ public class AppointmentsQuery {
         PreparedStatement preparedStatement = JDBC.getConnection().prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         while (resultSet.next()) {
+            java.time.LocalDateTime startLdt = JDBC.parseLocalDateTime(resultSet.getString("Start"));
+            java.time.LocalDateTime endLdt = JDBC.parseLocalDateTime(resultSet.getString("End"));
             Appointment appointment = new Appointment(
                     resultSet.getInt("Appointment_ID"),
                     resultSet.getString("Title"),
@@ -34,10 +36,10 @@ public class AppointmentsQuery {
                     resultSet.getString("Location"),
                     resultSet.getString("Contact_Name"),
                     resultSet.getString("Type"),
-                    resultSet.getTimestamp("Start").toLocalDateTime().toLocalDate(),
-                    resultSet.getTimestamp("Start").toLocalDateTime().toLocalTime(),
-                    resultSet.getTimestamp("End").toLocalDateTime().toLocalDate(),
-                    resultSet.getTimestamp("End").toLocalDateTime().toLocalTime(),
+                    startLdt != null ? startLdt.toLocalDate() : null,
+                    startLdt != null ? startLdt.toLocalTime() : null,
+                    endLdt != null ? endLdt.toLocalDate() : null,
+                    endLdt != null ? endLdt.toLocalTime() : null,
                     resultSet.getInt("Customer_ID"),
                     resultSet.getInt("User_ID"),
                     resultSet.getInt("Contact_ID"));

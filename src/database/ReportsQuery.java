@@ -24,7 +24,7 @@ public class ReportsQuery {
      * @throws SQLException these errors are handled by the caller
      */
     public static ObservableList<AppointmentTypeReport> getAppointmentsByType(Month month) throws SQLException {
-        String sql = "SELECT Type, COUNT(Appointment_ID) AS count FROM appointments WHERE MONTH(Start) = ? OR MONTH(End) = ? GROUP BY Type";
+        String sql = "SELECT Type, COUNT(Appointment_ID) AS count FROM appointments WHERE CAST(strftime('%m', Start) AS INTEGER) = ? OR CAST(strftime('%m', End) AS INTEGER) = ? GROUP BY Type";
         ObservableList<AppointmentTypeReport> appointmentTypeReports = FXCollections.observableArrayList();
         PreparedStatement preparedStatement = JDBC.getConnection().prepareStatement(sql);
         preparedStatement.setInt(1, month.getValue());
@@ -59,8 +59,8 @@ public class ReportsQuery {
                     resultSet.getString("Description"),
                     resultSet.getString("Location"),
                     resultSet.getString("Type"),
-                    resultSet.getTimestamp("Start").toLocalDateTime(),
-                    resultSet.getTimestamp("End").toLocalDateTime(),
+                    JDBC.parseLocalDateTime(resultSet.getString("Start")),
+                    JDBC.parseLocalDateTime(resultSet.getString("End")),
                     resultSet.getInt("Customer_ID"),
                     resultSet.getInt("User_ID"),
                     resultSet.getInt("Contact_ID"));
@@ -75,7 +75,7 @@ public class ReportsQuery {
      * @throws SQLException these errors are handled by the caller
      */
     public static ArrayList<DistributionReport> getAppointmentLengthDistribution() throws SQLException {
-        String sql = "SELECT COUNT(Appointment_ID) AS count, TIMESTAMPDIFF(MINUTE, Start, End) AS length FROM appointments GROUP BY length";
+        String sql = "SELECT COUNT(Appointment_ID) AS count, CAST(ROUND((julianday(End) - julianday(Start)) * 1440) AS INTEGER) AS length FROM appointments GROUP BY length";
         ArrayList<DistributionReport> distributionReports = new ArrayList<>();
         PreparedStatement preparedStatement = JDBC.getConnection().prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();

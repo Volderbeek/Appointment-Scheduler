@@ -21,7 +21,7 @@ public class LoginQuery {
      */
     public static int checkLogin(String userName, String password) {
         try {
-            String sql = "SELECT User_ID, User_Name, Password FROM client_schedule.users";
+            String sql = "SELECT User_ID, User_Name, Password FROM users";
             PreparedStatement preparedStatement = JDBC.getConnection().prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -44,7 +44,7 @@ public class LoginQuery {
      */
     public static ArrayList<Appointment> checkAppointments() {
         try {
-            String sql = "SELECT * FROM appointments WHERE (NOW() BETWEEN TIMESTAMPADD(MINUTE, -15, Start) AND End) AND User_ID = ?";
+            String sql = "SELECT * FROM appointments WHERE (datetime('now', 'localtime') BETWEEN datetime(Start, '-15 minutes') AND datetime(End)) AND User_ID = ?";
             PreparedStatement preparedStatement = JDBC.getConnection().prepareStatement(sql);
             ArrayList<Appointment> appointments = new ArrayList<>();
             preparedStatement.setInt(1, User.getUserId());
@@ -52,8 +52,8 @@ public class LoginQuery {
             while (resultSet.next()) {
                 Appointment appointment = new Appointment(
                         resultSet.getInt("Appointment_ID"),
-                        resultSet.getTimestamp("Start").toLocalDateTime(),
-                        resultSet.getTimestamp("End").toLocalDateTime()
+                        JDBC.parseLocalDateTime(resultSet.getString("Start")),
+                        JDBC.parseLocalDateTime(resultSet.getString("End"))
                 );
                 appointments.add(appointment);
             }
