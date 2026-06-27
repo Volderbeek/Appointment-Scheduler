@@ -18,7 +18,7 @@ import java.sql.Statement;
  */
 public abstract class JDBC {
 
-    private static final String dbPath = helper.Env.get("DB_PATH", "client_schedule.db");
+    private static final String dbPath = System.getenv("DB_PATH") != null ? System.getenv("DB_PATH") : "client_schedule.db";
     private static final String jdbcUrl = "jdbc:sqlite:" + dbPath;
     private static final String driver = "org.sqlite.JDBC";
     private static Connection connection;
