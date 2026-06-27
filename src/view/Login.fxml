@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginController">
+   <TextField fx:id="usernameBox" layoutX="85.0" layoutY="140.0" promptText="%username.text"/>
+   <PasswordField fx:id="passwordBox" layoutX="85.0" layoutY="188.0" promptText="%password.text"/>
+   <Button layoutX="110.0" layoutY="250.0" mnemonicParsing="false" onAction="#loginButtonClicked"
+           prefHeight="35.0" prefWidth="100.0" text="%login.text"/>
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="82.0" layoutY="54.0" prefHeight="47.0"
+          prefWidth="155.0" text="%login.text">
+      <font>
+         <Font name="System Bold" size="32.0"/>
+      </font>
+   </Label>
+   <Label layoutX="253.0" layoutY="369.0" text="%locale.text"/>
+   <Label fx:id="timeZoneLabel" layoutX="14.0" layoutY="369.0" text="Time Zone: "/>
+</AnchorPane>

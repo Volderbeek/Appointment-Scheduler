@@ -1,0 +1,9 @@
+.env
+.idea/
+.vscode/
+*.iml
+out/
+login_activity.txt
+javadoc/
+.DS_Store
+Thumbs.db
