@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="649.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="649.0" prefWidth="600.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AddAppointmentController">
     <GridPane layoutX="92.0" layoutY="95.0" prefHeight="472.0" prefWidth="410.0">
         <columnConstraints>
@@ -57,15 +57,11 @@
         <ComboBox fx:id="userComboBox" prefHeight="25.0" prefWidth="200.0" promptText="Select User"
                   GridPane.columnIndex="1" GridPane.rowIndex="4"/>
     </GridPane>
-    <Label layoutX="207.0" layoutY="29.0" text="Add Appointment">
-        <font>
-          <Font name="System Bold" size="24.0"/>
-        </font>
-    </Label>
+    <Label alignment="CENTER" layoutX="100.0" layoutY="29.0" prefWidth="400.0" styleClass="title-label" text="Add Appointment"/>
     <Button layoutX="132.0" layoutY="562.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="49.0"
-            prefWidth="109.0" text="Add"/>
+            prefWidth="109.0" styleClass="btn-primary" text="Add"/>
     <Button layoutX="376.0" layoutY="562.0" mnemonicParsing="false" onAction="#clearButtonClicked" prefHeight="49.0"
             prefWidth="98.0" text="Clear"/>
     <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back"/>
-    <Button layoutX="530.0" layoutY="17.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
+    <Button layoutX="500.0" layoutY="17.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
 </AnchorPane>

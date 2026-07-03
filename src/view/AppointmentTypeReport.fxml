@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <!--suppress JavaFxUnresolvedFxIdReference -->
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AppointmentTypeReportController">
     <GridPane layoutX="53.0" layoutY="121.0" prefHeight="238.0" prefWidth="221.0">
         <columnConstraints>
@@ -54,10 +54,6 @@
           <TableColumn fx:id="countColumn" prefWidth="74.0" text="Count"/>
       </columns>
     </TableView>
-    <Label layoutX="96.0" layoutY="54.0" text="Appointment Type Report" underline="true">
-        <font>
-          <Font name="System Bold" size="32.0"/>
-        </font>
-    </Label>
+    <Label alignment="CENTER" layoutX="50.0" layoutY="54.0" prefWidth="500.0" styleClass="title-label" text="Appointment Type Report"/>
     <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back"/>
 </AnchorPane>

@@ -5,14 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="550.0" prefWidth="650.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AppointmentLengthDistributionReportController">
-   <Label layoutX="80.0" layoutY="39.0" text="Appointment Length Distribution" underline="true">
-      <font>
-         <Font name="System Bold" size="32.0"/>
-      </font>
-   </Label>
+   <Label alignment="CENTER" layoutX="50.0" layoutY="39.0" prefWidth="550.0" styleClass="title-label" text="Appointment Length Distribution"/>
    <PieChart fx:id="pieChart" layoutX="75.0" layoutY="99.0" prefHeight="386.0" prefWidth="500.0"/>
    <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back"/>
-   <Button layoutX="585.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
+   <Button layoutX="550.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
 </AnchorPane>

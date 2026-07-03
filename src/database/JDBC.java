@@ -147,7 +147,19 @@ public abstract class JDBC {
      */
     public static java.time.LocalDateTime parseLocalDateTime(String str) {
         if (str == null || str.trim().isEmpty()) return null;
-        String isoStr = str.trim().replace(' ', 'T');
+        String trimmed = str.trim();
+        if (trimmed.matches("\\d+")) {
+            try {
+                long epochMillis = Long.parseLong(trimmed);
+                return java.time.LocalDateTime.ofInstant(
+                    java.time.Instant.ofEpochMilli(epochMillis),
+                    java.time.ZoneId.systemDefault()
+                );
+            } catch (NumberFormatException e) {
+                // fallback if parse fails
+            }
+        }
+        String isoStr = trimmed.replace(' ', 'T');
         if (isoStr.length() == 16) {
             isoStr += ":00";
         }

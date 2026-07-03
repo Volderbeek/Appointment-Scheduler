@@ -4,69 +4,56 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AppointmentsController">
-    <Label layoutX="265.0" layoutY="24.0" prefHeight="50.0" prefWidth="363.0" text="Appointment Scheduler"
-           underline="true">
-        <font>
-          <Font name="System Bold" size="32.0"/>
-        </font>
-    </Label>
-    <TableView fx:id="appointmentsTable" layoutX="16.0" layoutY="226.0" prefHeight="320.0" prefWidth="865.0">
+    <Label alignment="CENTER" layoutX="350.0" layoutY="24.0" prefHeight="50.0" prefWidth="500.0" styleClass="title-label" text="Appointment Scheduler"/>
+    <TableView fx:id="appointmentsTable" layoutX="20.0" layoutY="226.0" prefHeight="320.0" prefWidth="1160.0">
       <columns>
-          <TableColumn fx:id="idColumn" prefWidth="33.0" text="ID"/>
-          <TableColumn fx:id="titleColumn" prefWidth="63.0" text="Title"/>
-          <TableColumn fx:id="descriptionColumn" prefWidth="106.0" text="Description"/>
-          <TableColumn fx:id="locationColumn" prefWidth="85.0" text="Location"/>
-          <TableColumn fx:id="contactColumn" prefWidth="89.0" text="Contact"/>
-          <TableColumn fx:id="typeColumn" prefWidth="119.0" text="Type"/>
-          <TableColumn fx:id="startDateColumn" prefWidth="73.0" text="Date"/>
-          <TableColumn fx:id="startTimeColumn" prefWidth="44.0" text="Start"/>
-          <TableColumn fx:id="endDateColumn" prefWidth="74.0" text="Date"/>
-          <TableColumn fx:id="endTimeColumn" prefWidth="43.0" text="End"/>
-          <TableColumn fx:id="customerIdColumn" text="Customer ID"/>
-          <TableColumn fx:id="userIdColumn" prefWidth="46.0" text="User ID"/>
+          <TableColumn fx:id="idColumn" prefWidth="40.0" text="ID"/>
+          <TableColumn fx:id="titleColumn" prefWidth="90.0" text="Title"/>
+          <TableColumn fx:id="descriptionColumn" prefWidth="150.0" text="Description"/>
+          <TableColumn fx:id="locationColumn" prefWidth="100.0" text="Location"/>
+          <TableColumn fx:id="contactColumn" prefWidth="100.0" text="Contact"/>
+          <TableColumn fx:id="typeColumn" prefWidth="110.0" text="Type"/>
+          <TableColumn fx:id="startDateColumn" prefWidth="115.0" text="Start Date"/>
+          <TableColumn fx:id="startTimeColumn" prefWidth="70.0" text="Start Time"/>
+          <TableColumn fx:id="endDateColumn" prefWidth="115.0" text="End Date"/>
+          <TableColumn fx:id="endTimeColumn" prefWidth="70.0" text="End Time"/>
+          <TableColumn fx:id="customerIdColumn" prefWidth="110.0" text="Customer ID"/>
+          <TableColumn fx:id="userIdColumn" prefWidth="90.0" text="User ID"/>
       </columns>
     </TableView>
-    <RadioButton fx:id="monthToggle" layoutX="450.0" layoutY="196.0" mnemonicParsing="false"
+    <RadioButton fx:id="monthToggle" layoutX="750.0" layoutY="196.0" mnemonicParsing="false"
                  onAction="#monthToggleSelected" text="View by Month">
         <toggleGroup>
           <ToggleGroup fx:id="appointmentViewToggle"/>
         </toggleGroup>
     </RadioButton>
-    <RadioButton fx:id="allToggle" layoutX="585.0" layoutY="196.0" mnemonicParsing="false" onAction="#allToggleSelected"
+    <RadioButton fx:id="allToggle" layoutX="885.0" layoutY="196.0" mnemonicParsing="false" onAction="#allToggleSelected"
                  selected="true" text="View All" toggleGroup="$appointmentViewToggle"/>
-    <DatePicker fx:id="datePicker" editable="false" layoutX="704.0" layoutY="194.0" onAction="#datePicked"/>
-    <RadioButton fx:id="weekToggle" layoutX="322.0" layoutY="196.0" mnemonicParsing="false"
+    <DatePicker fx:id="datePicker" editable="false" layoutX="1004.0" layoutY="194.0" onAction="#datePicked"/>
+    <RadioButton fx:id="weekToggle" layoutX="622.0" layoutY="196.0" mnemonicParsing="false"
                  onAction="#weekToggleSelected" text="View by Week" toggleGroup="$appointmentViewToggle"/>
-    <Label layoutX="16.0" layoutY="196.0" text="Appointment Schedule">
-        <font>
-          <Font name="System Bold" size="14.0"/>
-        </font>
-    </Label>
-    <Button layoutX="23.0" layoutY="101.0" mnemonicParsing="false" onAction="#customersButtonClicked" prefHeight="50.0"
-            prefWidth="122.0" text="Customers"/>
-    <Button layoutX="341.0" layoutY="114.0" mnemonicParsing="false" onAction="#appointmentTypeButtonClicked"
-            prefHeight="38.0" prefWidth="136.0" text="Appointment Type"/>
-    <Button layoutX="832.0" layoutY="10.0" mnemonicParsing="false" onAction="#logoutButtonClicked" text="Logout"/>
-    <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#addButtonClicked" text="Add"/>
-    <Button layoutX="65.0" layoutY="561.0" mnemonicParsing="false" onAction="#editButtonClicked" text="Edit"/>
-    <Button layoutX="120.0" layoutY="561.0" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete"/>
-    <Label fx:id="timezoneLabel" layoutX="682.0" layoutY="565.0" text="Your Timezone: "/>
-    <Label fx:id="userNameLabel" layoutX="14.0" layoutY="14.0" text="User: ">
+    <Label layoutX="20.0" layoutY="196.0" styleClass="header-label" text="Appointment Schedule"/>
+    <Button layoutX="20.0" layoutY="101.0" mnemonicParsing="false" onAction="#customersButtonClicked" prefHeight="50.0"
+            prefWidth="130.0" text="Customers"/>
+    <Button layoutX="255.0" layoutY="114.0" mnemonicParsing="false" onAction="#appointmentTypeButtonClicked"
+            prefHeight="38.0" prefWidth="200.0" text="Appointment Type"/>
+    <Button layoutX="1100.0" layoutY="10.0" mnemonicParsing="false" onAction="#logoutButtonClicked" text="Logout"/>
+    <Button layoutX="20.0" layoutY="561.0" mnemonicParsing="false" onAction="#addButtonClicked" styleClass="btn-primary" text="Add"/>
+    <Button layoutX="76.0" layoutY="561.0" mnemonicParsing="false" onAction="#editButtonClicked" styleClass="btn-primary" text="Edit"/>
+    <Button layoutX="132.0" layoutY="561.0" mnemonicParsing="false" onAction="#deleteButtonClicked" styleClass="btn-danger" text="Delete"/>
+    <Label fx:id="timezoneLabel" layoutX="980.0" layoutY="565.0" text="Your Timezone: "/>
+    <Label fx:id="userNameLabel" layoutX="20.0" layoutY="14.0" text="User: ">
         <font>
           <Font size="14.0"/>
         </font>
     </Label>
-    <Button layoutX="209.0" layoutY="192.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
-    <Label layoutX="267.0" layoutY="122.0" text="Reports:">
-        <font>
-          <Font name="System Bold" size="14.0"/>
-        </font>
-    </Label>
-    <Button layoutX="499.0" layoutY="114.0" mnemonicParsing="false" onAction="#contactScheduleButtonClicked"
-            prefHeight="38.0" prefWidth="122.0" text="Contact Schedule"/>
-    <Button layoutX="644.0" layoutY="113.0" mnemonicParsing="false"
-            onAction="#appointmentLengthDistributionButtonClicked" prefHeight="38.0" prefWidth="198.0"
+    <Button layoutX="220.0" layoutY="192.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
+    <Label layoutX="175.0" layoutY="122.0" styleClass="header-label" text="Reports:"/>
+    <Button layoutX="470.0" layoutY="114.0" mnemonicParsing="false" onAction="#contactScheduleButtonClicked"
+            prefHeight="38.0" prefWidth="180.0" text="Contact Schedule"/>
+    <Button layoutX="665.0" layoutY="113.0" mnemonicParsing="false"
+            onAction="#appointmentLengthDistributionButtonClicked" prefHeight="38.0" prefWidth="260.0"
             text="Appointment Length Distribution"/>
 </AnchorPane>

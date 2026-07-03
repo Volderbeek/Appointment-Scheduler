@@ -4,27 +4,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.ContactScheduleReportController">
-    <Label layoutX="212.0" layoutY="64.0" text="Contact Schedule Report" underline="true">
-        <font>
-          <Font name="System Bold" size="32.0"/>
-        </font>
-    </Label>
+    <Label alignment="CENTER" layoutX="150.0" layoutY="64.0" prefWidth="500.0" styleClass="title-label" text="Contact Schedule Report"/>
     <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back"/>
-    <Button layoutX="724.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
+    <Button layoutX="700.0" layoutY="14.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
     <ComboBox fx:id="contactComboBox" layoutX="269.0" layoutY="177.0" onAction="#contactComboBoxSelected"
               prefHeight="25.0" prefWidth="258.0" promptText="Select Contact"/>
-    <Label layoutX="365.0" layoutY="153.0" text="Contact">
-        <font>
-          <Font name="System Bold" size="13.0"/>
-        </font>
-    </Label>
-    <Label layoutX="302.0" layoutY="249.0" text="Schedule of Selected Contact">
-        <font>
-          <Font name="System Bold" size="14.0"/>
-        </font>
-    </Label>
+    <Label layoutX="365.0" layoutY="153.0" styleClass="header-label" text="Contact"/>
+    <Label alignment="CENTER" layoutX="200.0" layoutY="249.0" prefWidth="400.0" styleClass="header-label" text="Schedule of Selected Contact"/>
     <TableView fx:id="scheduleTable" layoutX="21.0" layoutY="291.0" prefHeight="284.0" prefWidth="754.0">
       <columns>
           <TableColumn fx:id="idColumn" prefWidth="52.0" text="ID"/>

@@ -4,15 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane prefHeight="550.0" prefWidth="800.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.CustomersController">
-    <Label layoutX="302.0" layoutY="36.0" text="Customers" underline="true">
-        <font>
-          <Font name="System Bold" size="32.0"/>
-        </font>
-    </Label>
+    <Label alignment="CENTER" layoutX="200.0" layoutY="36.0" prefWidth="400.0" styleClass="title-label" text="Customers"/>
     <Button layoutX="26.0" layoutY="23.0" mnemonicParsing="false" onAction="#backButtonClicked" text="Back"/>
-    <Button layoutX="714.0" layoutY="23.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
+    <Button layoutX="700.0" layoutY="23.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
     <TableView fx:id="customersTable" layoutX="28.0" layoutY="200.0" prefHeight="325.0" prefWidth="744.0">
       <columns>
           <TableColumn fx:id="idColumn" prefWidth="90.0" text="Customer ID"/>
@@ -25,9 +21,9 @@
       </columns>
     </TableView>
     <Button layoutX="93.0" layoutY="120.0" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="54.0"
-            prefWidth="92.0" text="Add"/>
+            prefWidth="92.0" styleClass="btn-primary" text="Add"/>
     <Button layoutX="336.0" layoutY="123.0" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="54.0"
-            prefWidth="92.0" text="Edit"/>
+            prefWidth="92.0" styleClass="btn-primary" text="Edit"/>
     <Button layoutX="557.0" layoutY="123.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="54.0"
-            prefWidth="92.0" text="Delete"/>
+            prefWidth="92.0" styleClass="btn-danger" text="Delete"/>
 </AnchorPane>

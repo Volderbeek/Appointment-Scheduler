@@ -49,7 +49,7 @@ public class AppointmentLengthDistributionReportController implements Initializa
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Appointments.fxml")));
         stage.setTitle("Appointment Scheduler");
-        stage.setScene(new Scene(root, 900, 600));
+        stage.setScene(new Scene(root, 1200, 600));
         stage.show();
     }
 
