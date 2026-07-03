@@ -95,42 +95,44 @@
     -fx-background-color: #475569;
 }
 
-.btn-primary {
+.button.btn-primary {
     background-color: #6366f1; /* Indigo 500 */
     -fx-background-color: #6366f1;
     -fx-text-fill: #ffffff;
+    text-fill: #ffffff;
     border-color: transparent;
     -fx-border-color: transparent;
     font-weight: bold;
     -fx-font-weight: bold;
 }
 
-.btn-primary:hover {
+.button.btn-primary:hover {
     background-color: #4f46e5; /* Indigo 600 */
     -fx-background-color: #4f46e5;
 }
 
-.btn-primary:pressed {
+.button.btn-primary:pressed {
     background-color: #4338ca; /* Indigo 700 */
     -fx-background-color: #4338ca;
 }
 
-.btn-danger {
+.button.btn-danger {
     background-color: #f43f5e; /* Rose 500 */
     -fx-background-color: #f43f5e;
     -fx-text-fill: #ffffff;
+    text-fill: #ffffff;
     border-color: transparent;
     -fx-border-color: transparent;
     font-weight: bold;
     -fx-font-weight: bold;
 }
 
-.btn-danger:hover {
+.button.btn-danger:hover {
     background-color: #e11d48; /* Rose 600 */
     -fx-background-color: #e11d48;
 }
 
-.btn-danger:pressed {
+.button.btn-danger:pressed {
     background-color: #be123c; /* Rose 700 */
     -fx-background-color: #be123c;
 }

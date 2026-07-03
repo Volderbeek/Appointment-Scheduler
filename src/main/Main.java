@@ -40,6 +40,7 @@ public class Main extends Application {
         Platform.runLater(root::requestFocus);
         stage.setTitle("Appointment Scheduler");
         stage.setScene(new Scene(root, 320, 400));
+        stage.centerOnScreen();
         stage.show();
     }
 

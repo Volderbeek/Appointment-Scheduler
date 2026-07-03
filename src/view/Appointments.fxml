@@ -1,59 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AppointmentsController">
-    <Label alignment="CENTER" layoutX="350.0" layoutY="24.0" prefHeight="50.0" prefWidth="500.0" styleClass="title-label" text="Appointment Scheduler"/>
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentsController">
+    <Label alignment="CENTER" layoutX="314.0" layoutY="27.0" prefHeight="50.0" prefWidth="500.0" styleClass="title-label" text="Appointment Scheduler" />
     <TableView fx:id="appointmentsTable" layoutX="20.0" layoutY="226.0" prefHeight="320.0" prefWidth="1160.0">
       <columns>
-          <TableColumn fx:id="idColumn" prefWidth="40.0" text="ID"/>
-          <TableColumn fx:id="titleColumn" prefWidth="90.0" text="Title"/>
-          <TableColumn fx:id="descriptionColumn" prefWidth="150.0" text="Description"/>
-          <TableColumn fx:id="locationColumn" prefWidth="100.0" text="Location"/>
-          <TableColumn fx:id="contactColumn" prefWidth="100.0" text="Contact"/>
-          <TableColumn fx:id="typeColumn" prefWidth="110.0" text="Type"/>
-          <TableColumn fx:id="startDateColumn" prefWidth="115.0" text="Start Date"/>
-          <TableColumn fx:id="startTimeColumn" prefWidth="70.0" text="Start Time"/>
-          <TableColumn fx:id="endDateColumn" prefWidth="115.0" text="End Date"/>
-          <TableColumn fx:id="endTimeColumn" prefWidth="70.0" text="End Time"/>
-          <TableColumn fx:id="customerIdColumn" prefWidth="110.0" text="Customer ID"/>
-          <TableColumn fx:id="userIdColumn" prefWidth="90.0" text="User ID"/>
+          <TableColumn fx:id="idColumn" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="titleColumn" prefWidth="90.0" text="Title" />
+          <TableColumn fx:id="descriptionColumn" prefWidth="150.0" text="Description" />
+          <TableColumn fx:id="locationColumn" prefWidth="100.0" text="Location" />
+          <TableColumn fx:id="contactColumn" prefWidth="100.0" text="Contact" />
+          <TableColumn fx:id="typeColumn" prefWidth="110.0" text="Type" />
+          <TableColumn fx:id="startDateColumn" prefWidth="115.0" text="Start Date" />
+          <TableColumn fx:id="startTimeColumn" prefWidth="70.0" text="Start Time" />
+          <TableColumn fx:id="endDateColumn" prefWidth="115.0" text="End Date" />
+          <TableColumn fx:id="endTimeColumn" prefWidth="70.0" text="End Time" />
+          <TableColumn fx:id="customerIdColumn" prefWidth="110.0" text="Customer ID" />
+          <TableColumn fx:id="userIdColumn" prefWidth="90.0" text="User ID" />
       </columns>
     </TableView>
-    <RadioButton fx:id="monthToggle" layoutX="750.0" layoutY="196.0" mnemonicParsing="false"
-                 onAction="#monthToggleSelected" text="View by Month">
+    <RadioButton fx:id="monthToggle" layoutX="750.0" layoutY="196.0" mnemonicParsing="false" onAction="#monthToggleSelected" text="View by Month">
         <toggleGroup>
-          <ToggleGroup fx:id="appointmentViewToggle"/>
+          <ToggleGroup fx:id="appointmentViewToggle" />
         </toggleGroup>
     </RadioButton>
-    <RadioButton fx:id="allToggle" layoutX="885.0" layoutY="196.0" mnemonicParsing="false" onAction="#allToggleSelected"
-                 selected="true" text="View All" toggleGroup="$appointmentViewToggle"/>
-    <DatePicker fx:id="datePicker" editable="false" layoutX="1004.0" layoutY="194.0" onAction="#datePicked"/>
-    <RadioButton fx:id="weekToggle" layoutX="622.0" layoutY="196.0" mnemonicParsing="false"
-                 onAction="#weekToggleSelected" text="View by Week" toggleGroup="$appointmentViewToggle"/>
-    <Label layoutX="20.0" layoutY="196.0" styleClass="header-label" text="Appointment Schedule"/>
-    <Button layoutX="20.0" layoutY="101.0" mnemonicParsing="false" onAction="#customersButtonClicked" prefHeight="50.0"
-            prefWidth="130.0" text="Customers"/>
-    <Button layoutX="255.0" layoutY="114.0" mnemonicParsing="false" onAction="#appointmentTypeButtonClicked"
-            prefHeight="38.0" prefWidth="200.0" text="Appointment Type"/>
-    <Button layoutX="1100.0" layoutY="10.0" mnemonicParsing="false" onAction="#logoutButtonClicked" text="Logout"/>
-    <Button layoutX="20.0" layoutY="561.0" mnemonicParsing="false" onAction="#addButtonClicked" styleClass="btn-primary" text="Add"/>
-    <Button layoutX="76.0" layoutY="561.0" mnemonicParsing="false" onAction="#editButtonClicked" styleClass="btn-primary" text="Edit"/>
-    <Button layoutX="132.0" layoutY="561.0" mnemonicParsing="false" onAction="#deleteButtonClicked" styleClass="btn-danger" text="Delete"/>
-    <Label fx:id="timezoneLabel" layoutX="980.0" layoutY="565.0" text="Your Timezone: "/>
+    <RadioButton fx:id="allToggle" layoutX="885.0" layoutY="196.0" mnemonicParsing="false" onAction="#allToggleSelected" selected="true" text="View All" toggleGroup="$appointmentViewToggle" />
+    <DatePicker fx:id="datePicker" editable="false" layoutX="1002.0" layoutY="190.0" onAction="#datePicked" />
+    <RadioButton fx:id="weekToggle" layoutX="622.0" layoutY="196.0" mnemonicParsing="false" onAction="#weekToggleSelected" text="View by Week" toggleGroup="$appointmentViewToggle" />
+    <Label layoutX="20.0" layoutY="196.0" styleClass="header-label" text="Appointment Schedule" />
+    <Button layoutX="20.0" layoutY="101.0" mnemonicParsing="false" onAction="#customersButtonClicked" prefHeight="50.0" prefWidth="130.0" text="Customers" />
+    <Button layoutX="513.0" layoutY="111.0" mnemonicParsing="false" onAction="#appointmentTypeButtonClicked" prefHeight="38.0" prefWidth="200.0" text="Appointment Type" />
+    <Button layoutX="1106.0" layoutY="9.0" mnemonicParsing="false" onAction="#logoutButtonClicked" text="Logout" />
+    <Button layoutX="20.0" layoutY="561.0" mnemonicParsing="false" onAction="#addButtonClicked" styleClass="btn-primary" text="Add" />
+    <Button layoutX="92.0" layoutY="561.0" mnemonicParsing="false" onAction="#editButtonClicked" styleClass="btn-primary" text="Edit" />
+    <Button layoutX="163.0" layoutY="562.0" mnemonicParsing="false" onAction="#deleteButtonClicked" styleClass="btn-danger" text="Delete" />
+    <Label fx:id="timezoneLabel" layoutX="980.0" layoutY="565.0" text="Your Timezone: " />
     <Label fx:id="userNameLabel" layoutX="20.0" layoutY="14.0" text="User: ">
         <font>
-          <Font size="14.0"/>
+          <Font size="14.0" />
         </font>
     </Label>
-    <Button layoutX="220.0" layoutY="192.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh"/>
-    <Label layoutX="175.0" layoutY="122.0" styleClass="header-label" text="Reports:"/>
-    <Button layoutX="470.0" layoutY="114.0" mnemonicParsing="false" onAction="#contactScheduleButtonClicked"
-            prefHeight="38.0" prefWidth="180.0" text="Contact Schedule"/>
-    <Button layoutX="665.0" layoutY="113.0" mnemonicParsing="false"
-            onAction="#appointmentLengthDistributionButtonClicked" prefHeight="38.0" prefWidth="260.0"
-            text="Appointment Length Distribution"/>
+    <Button layoutX="214.0" layoutY="188.0" mnemonicParsing="false" onAction="#refreshButtonClicked" text="Refresh" />
+    <Label layoutX="434.0" layoutY="120.0" styleClass="header-label" text="Reports:" />
+    <Button layoutX="728.0" layoutY="111.0" mnemonicParsing="false" onAction="#contactScheduleButtonClicked" prefHeight="38.0" prefWidth="180.0" text="Contact Schedule" />
+    <Button layoutX="921.0" layoutY="111.0" mnemonicParsing="false" onAction="#appointmentLengthDistributionButtonClicked" prefHeight="38.0" prefWidth="260.0" text="Appointment Length Distribution" />
 </AnchorPane>

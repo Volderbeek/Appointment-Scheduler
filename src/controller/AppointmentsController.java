@@ -105,6 +105,7 @@ public class AppointmentsController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Customers.fxml")));
         stage.setTitle("Customers");
         stage.setScene(new Scene(root, 800, 550));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -122,6 +123,7 @@ public class AppointmentsController implements Initializable {
         Platform.runLater(root::requestFocus);
         stage.setTitle("Appointment Scheduler");
         stage.setScene(new Scene(root, 320, 400));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -136,6 +138,7 @@ public class AppointmentsController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AddAppointment.fxml")));
         stage.setTitle("Add Appointment");
         stage.setScene(new Scene(root, 600, 649));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -153,6 +156,7 @@ public class AppointmentsController implements Initializable {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/EditAppointment.fxml")));
             stage.setTitle("Edit Appointment");
             stage.setScene(new Scene(root, 600, 649));
+            stage.centerOnScreen();
             stage.show();
         }
         else {
@@ -242,6 +246,7 @@ public class AppointmentsController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AppointmentTypeReport.fxml")));
         stage.setTitle("Appointment Type Report");
         stage.setScene(new Scene(root, 600, 400));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -256,6 +261,7 @@ public class AppointmentsController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/ContactScheduleReport.fxml")));
         stage.setTitle("Contact Schedule Report");
         stage.setScene(new Scene(root, 800, 600));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -270,6 +276,7 @@ public class AppointmentsController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AppointmentLengthDistributionReport.fxml")));
         stage.setTitle("Appointment Length Distribution Report");
         stage.setScene(new Scene(root, 650, 550));
+        stage.centerOnScreen();
         stage.show();
     }
 

@@ -81,10 +81,11 @@ public class LoginController implements Initializable {
                 appointmentMessage.showAndWait();
             }
 
-            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Appointments.fxml")));
             stage.setTitle("Appointment Scheduler");
             stage.setScene(new Scene(root, 1200, 600));
+            stage.centerOnScreen();
             stage.show();
             User.logToFile("Login successful: ", userName);
         }

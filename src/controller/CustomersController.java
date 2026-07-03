@@ -82,6 +82,7 @@ public class CustomersController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/AddCustomer.fxml")));
         stage.setTitle("Add Customer");
         stage.setScene(new Scene(root, 600, 500));
+        stage.centerOnScreen();
         stage.show();
     }
 
@@ -99,6 +100,7 @@ public class CustomersController implements Initializable {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/EditCustomer.fxml")));
             stage.setTitle("Edit Customer");
             stage.setScene(new Scene(root, 600, 500));
+            stage.centerOnScreen();
             stage.show();
         }
         else {
@@ -185,6 +187,7 @@ public class CustomersController implements Initializable {
                 .getResource("/view/Appointments.fxml")));
         stage.setTitle("Appointment Scheduler");
         stage.setScene(new Scene(root, 1200, 600));
+        stage.centerOnScreen();
         stage.show();
     }
 }

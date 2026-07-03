@@ -155,6 +155,7 @@ public class AddCustomerController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Customers.fxml")));
         stage.setTitle("Customers");
         stage.setScene(new Scene(root, 800, 550));
+        stage.centerOnScreen();
         stage.show();
     }
 

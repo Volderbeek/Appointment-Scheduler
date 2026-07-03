@@ -238,6 +238,7 @@ public class AddAppointmentController implements Initializable {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/Appointments.fxml")));
         stage.setTitle("Appointment Scheduler");
         stage.setScene(new Scene(root, 1200, 600));
+        stage.centerOnScreen();
         stage.show();
     }
 
